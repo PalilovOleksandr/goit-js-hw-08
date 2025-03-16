@@ -1,7 +1,6 @@
 img {
   display: block;
-  width: 360px;
-  height: 200px;
+  max-width: 100%;
 }
 h1,
 h2,
@@ -35,4 +34,7 @@ ol {
 
 .gallery-item:hover {
   transform: scale(1.03);
+}
+.modal {
+  background-color: rgba(46, 47, 66, 0.8);
 }

@@ -67,7 +67,6 @@ const images = [
 const container = document.querySelector('.gallery');
 container.insertAdjacentHTML('beforeend', createMarkup(images));
 container.addEventListener('click', handleClick);
-const imgEl = container.querySelector('.gallery-image');
 
 function createMarkup(arr) {
   return arr
@@ -90,4 +89,12 @@ function createMarkup(arr) {
 }
 function handleClick(event) {
   event.preventDefault();
+  if (event.target.nodeName.toLowerCase() === 'img') {
+    const instance = basicLightbox.create(`
+      <div class="modal">
+      <img src="${event.target.dataset.source}" alt="${event.target.alt}" width="1112" height="640"/>
+      </div>
+      `);
+    instance.show();
+  }
 }
